@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #000;
+        width: 100%;
+        height: 100%;
+    }
+    #unity-canvas {
+        width: 100%;
+        height: 100%;
+        touch-action: none;
+    }
+</style>
+</head>
+<body>
+
+<canvas id="unity-canvas"></canvas>
+<script>
+    const canvas = document.querySelector("#unity-canvas");
+
+    createUnityInstance(canvas, {
+        dataUrl: "Build/build.data.unityweb",
+        frameworkUrl: "Build/build.framework.js.unityweb",
+        codeUrl: "Build/build.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Company",
+        productName: "PlayableAds",
+        productVersion: "1.0",
+    });
+</script>
+
+</body>
+</html>
